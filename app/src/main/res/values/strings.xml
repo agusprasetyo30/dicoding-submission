@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Movie Catalogue</string>
+    <string name="judul_film">Judul film</string>
+    <string name="tanggal_film">14 Januari 2019</string>
+    <string name="lorem">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</string>
+    <string name="title_detail">Title</string>
+    <string name="title_dummy">title title title title title</string>
+    <string name="date_release_detail">Date Release</string>
+    <string name="date_dummy_detail">Date Date Date Date</string>
+    <string name="rating_dummy_detail">Rating Rating Rating</string>
+    <string name="rating_title_detail">Rating</string>
+    <string name="description_title_detail">Description</string>
+
+    <string-array name="title_film">
+        <item>A Star Is Born</item>
+        <item>Aquaman</item>
+        <item>Avengers Infinity War</item>
+        <item>Bohemian Rhapsody</item>
+        <item>BumbleBee</item>
+        <item>Creed II</item>
+        <item>Once Upon A Deadpool</item>
+        <item>Preman Pensiun</item>
+        <item>Spiderman</item>
+        <item>Bird Box</item>
+    </string-array>
+
+    <string-array name="date_film">
+        <item>Oktober 05, 2018</item>
+        <item>Desember 21, 2018</item>
+        <item>April 23, 2018</item>
+        <item>Oktober 30, 2018</item>
+        <item>Desember 15, 2018</item>
+        <item>Nopember 14, 2018</item>
+        <item>Desember 13, 2018</item>
+        <item>January 17, 2019</item>
+        <item>Desember 01, 2018</item>
+        <item>Nopember 12, 2018</item>
+    </string-array>
+
+    <string-array name="description_film">
+        <item>Musisi kawakan Jackson Maine (Bradley Cooper) menemukan-dan jatuh cinta dengan artis yang sedang berjuang Ally (Gaga). Dia baru saja menyerah pada mimpinya untuk menjadi besar sebagai penyanyi - sampai Jack membujuknya menjadi sorotan. Tetapi bahkan ketika karier Ally lepas landas, sisi pribadi dari hubungan mereka hancur, ketika Jack berjuang terus-menerus dengan saigan internalnya sendiri.</item>
+        <item>Dulunya merupakan rumah bagi peradaban paling maju di Bumi, Atlantis sekarang merupakan kerajaan bawah laut yang diperintah oleh Raja Orm yang haus kekuasaan. Dengan pasukan yang sangat besar, Orm berencana untuk menaklukkan orang-orang samudera yang tersisa dan kemudian ke permukaan dunia. Yang menghalangi jalannya adalah Arthur Curry, saudara tiri manusia setengah manusia Orm dan pewaris sejati takhta.</item>
+        <item>Ketika Avengers dan sekutu mereka terus melindungi dunia dari ancaman yang terlalu besar untuk ditangani oleh satu pahlawan, bahaya baru telah muncul dari bayang-bayang kosmik: Thanos. Seorang lalim penghinaan intergalaksi, tujuannya adalah untuk mengumpulkan semua enam Batu Infinity, artefak kekuatan yang tak terbayangkan, dan menggunakannya untuk menimbulkan keinginannya yang terpelintir pada semua kenyataan. Segala yang Avengers telah perjuangkan telah mengarah ke saat ini - nasib Bumi dan keberadaannya sendiri tidak pernah lebih pasti.</item>
+        <item>Penyanyi Freddie Mercury, gitaris Brian May, drummer Roger Taylor dan gitaris bass John Deacon menggemparkan dunia musik ketika mereka membentuk band rock n roll Queen pada tahun 1970. Lagu-lagu hit menjadi klasik instan. Ketika gaya hidup Mercury yang semakin liar mulai lepas kendali, Queen segera menghadapi tantangan terbesarnya - menemukan cara untuk menjaga band bersama di tengah kesuksesan dan kelebihan.</item>
+        <item>Dalam pelarian pada tahun 1987, Bumblebee menemukan tempat perlindungan di tempat barang rongsokan di kota pantai kecil California. Charlie, di puncak usia 18 dan berusaha menemukan tempatnya di dunia, menemukan Bumblebee, bekas luka pertempuran dan patah. Ketika Charlie menghidupkannya, dia dengan cepat mengetahui bahwa ini bukan bug VW kuning biasa</item>
+        <item>Antara kewajiban pribadi dan pelatihan untuk pertarungan besar berikutnya melawan lawan yang memiliki ikatan dengan masa lalu keluarganya, Adonis Creed menghadapi tantangan hidupnya.</item>
+        <item>Fred Savage yang diculik dipaksa untuk menahan Deadpool PG-13 rendition of Deadpool 2 sebagai cerita Princess Bride-esque yang penuh dengan keajaiban, keajaiban &amp; nol F.</item>
+        <item>Setelah tiga tahun, bisnis Muslihat (Epi Kusnandar), yang telah pensiun sebagai preman, memiliki masalah. Penurunan penjualan. Muslihat juga menghadapi masalah baru ketika Safira (Safira Maharani), satu-satunya anak perempuannya, tumbuh di masa remaja dan mulai dikunjungi oleh anak laki-laki. Masalah yang lebih besar: gesekan antara mantan bawahannya.</item>
+        <item>Miles Morales menyulap hidupnya antara menjadi siswa sekolah menengah dan menjadi manusia laba-laba. Ketika Wilson "Kingpin" Fisk menggunakan collider super, yang lain dari seberang Spider-Verse diangkut ke dimensi ini.</item>
+        <item>Lima tahun setelah kehadiran tak terlihat yang tidak menyenangkan membuat sebagian besar masyarakat bunuh diri, seorang yang selamat dan dua anaknya melakukan upaya putus asa untuk mencapai keselamatan.</item>
+    </string-array>
+
+    <string-array name="image_film">
+        <item>@drawable/poster_a_star</item>
+        <item>@drawable/poster_aquaman</item>
+        <item>@drawable/poster_avengerinfinity</item>
+        <item>@drawable/poster_bohemian</item>
+        <item>@drawable/poster_bumblebee</item>
+        <item>@drawable/poster_creed</item>
+        <item>@drawable/poster_deadpool</item>
+        <item>@drawable/poster_preman</item>
+        <item>@drawable/poster_spiderman</item>
+        <item>@drawable/poster_birdbox</item>
+    </string-array>
+
+    <string-array name="rating_film">
+        <item>7.5</item>
+        <item>6.8</item>
+        <item>8.3</item>
+        <item>8.0</item>
+        <item>6.5</item>
+        <item>6.8</item>
+        <item>6.9</item>
+        <item>6.5</item>
+        <item>8.4</item>
+        <item>6.9</item>
+    </string-array>
+</resources>
