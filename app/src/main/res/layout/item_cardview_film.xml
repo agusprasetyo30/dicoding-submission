@@ -21,8 +21,8 @@
             android:id="@+id/img_photo_film"
             android:layout_width="150dp"
             android:layout_height="220dp"
-            android:scaleType="centerCrop"
-            android:src="@color/colorAccent"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/film_aquaman"/>
 
         <TextView
             android:id="@+id/tv_item_film_name"
@@ -33,7 +33,7 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
             android:layout_toEndOf="@id/img_photo_film"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:text="@string/ex_item_film_name" />
 
