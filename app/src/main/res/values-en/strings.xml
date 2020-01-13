@@ -1,4 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--English-->
+    <string name="app_name">Submission2 (English)</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">TV</string>
+
+    <!-- Example card view data -->
+    <string name="ex_item_film_name">Film\' Title</string>
+    <string name="ex_item_film_description">Film\'s Description</string>
+    <string name="ex_item_tv_name">TV Series\'s Title</string>
+    <string name="ex_item_tv_description">TV Series\'s Description</string>
+
+    <!--Dummy-->
+    <string name="title_detail">Title</string>
+    <string name="title_dummy">title title title title title</string>
+    <string name="date_release_detail">Date Release</string>
+    <string name="date_dummy_detail">Date Date Date Date</string>
+    <string name="rating_dummy_detail">Rating Rating Rating</string>
+    <string name="rating_title_detail">Rating</string>
+    <string name="description_title_detail">Description</string>
+    <string name="lorem">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</string>
+
+    <!--Menu-->
     <string name="change_language">Change Language</string>
+
+    <!-- Data Film -->
+    <string-array name="title_film">
+        <item>A Star Is Born</item>
+        <item>Aquaman</item>
+        <item>Avengers Infinity War</item>
+        <item>Bohemian Rhapsody</item>
+        <item>BumbleBee</item>
+        <item>Creed II</item>
+        <item>Once Upon A Deadpool</item>
+        <item>Preman Pensiun</item>
+        <item>Spiderman</item>
+        <item>Bird Box</item>
+    </string-array>
+
+    <string-array name="date_film">
+        <item>October 05, 2018</item>
+        <item>December 21, 2018</item>
+        <item>April 23, 2018</item>
+        <item>October 30, 2018</item>
+        <item>December 15, 2018</item>
+        <item>November 14, 2018</item>
+        <item>December 13, 2018</item>
+        <item>January 17, 2019</item>
+        <item>December 01, 2018</item>
+        <item>November 12, 2018</item>
+    </string-array>
+
+    <string-array name="description_film">
+        <item>Long\-time musician Jackson Maine (Bradley Cooper) finds and falls in love with struggling artist Ally (Gaga). He had just given up on his dream of becoming a big singer - until Jack talked him into the spotlight. But even when Ally\'s career took off, the personal side of their relationship was destroyed, when Jack struggled constantly with his own internal partner.</item>
+        <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a very large army, Orm plans to conquer the remaining ocean people and then to the surface of the world. What blocked his way was Arthur Curry, half-human half-human Orm half-brother and the true heir to the throne.</item>
+        <item>As the Avengers and their allies continue to protect the world from threats that are too large to be handled by one hero, a new danger has arisen from the cosmic shadow: Thanos. An intergalactic despic despot, his aim is to gather all six Infinity Stones, artifacts of unimaginable strength, and use them to arouse his desires which are twisted in all reality. Everything that the Avengers have fought for has led to the present - the fate of the Earth and its very existence has never been more certain.</item>
+        <item>Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon shocked the music world when they formed the rock and roll band Queen in 1970. Hit songs became an instant classic. When Mercury\'s increasingly wild lifestyle began to spiral out of control, Queen immediately faced her biggest challenge - finding ways to keep the band together amidst success and strength.</item>
+        <item>On an escape in 1987, Bumblebee found a shelter in a junkyard in the small coastal town of California. Charlie, at the age of 18 and trying to find his place in the world, found Bumblebee, a battle scar and broken. When Charlie turned it on, he quickly learned that this wasn\'t an ordinary yellow VW bug</item>
+        <item>Between personal obligations and training for the next big fight against opponents who have ties to his family\'s past, Adonis Creed faces the challenges of his life.</item>
+        <item>Kidnapped Fred Savage is forced to hold Deadpool PG-13 rendition of Deadpool 2 as a story of Princess Bride-esque that is full of miracles, wonders &amp; zero F.</item>
+        <item>After three years, the Muslihat (Epi Kusnandar) business, which had retired as a thug, had a problem. Decline in sales. Muslihat also faced a new problem when Safira (Safira Maharani), her only daughter, grew up in adolescence and began to be visited by boys. A bigger problem: friction between his former subordinates.</item>
+        <item>Miles Morales juggled his life between being a middle school student and being a spider man. When Wilson "Kingpin" Fisk uses a super collider, the others from across Spider-Verse are transported to this dimension.</item>
+        <item>Five years after an unpleasant, invisible presence made most of the people commit suicide, a survivor and his two children made a desperate attempt to achieve safety.</item>
+    </string-array>
+
+    <string-array name="image_film">
+        <item>@drawable/film_astar</item>
+        <item>@drawable/film_aquaman</item>
+        <item>@drawable/film_avengerinfinity</item>
+        <item>@drawable/film_bohemian</item>
+        <item>@drawable/film_bumblebee</item>
+        <item>@drawable/film_creed</item>
+        <item>@drawable/film_deadpool</item>
+        <item>@drawable/film_preman</item>
+        <item>@drawable/film_spiderman</item>
+        <item>@drawable/film_birdbox</item>
+    </string-array>
+
+    <string-array name="rating_film">
+        <item>7.5</item>
+        <item>6.8</item>
+        <item>8.3</item>
+        <item>8.0</item>
+        <item>6.5</item>
+        <item>6.8</item>
+        <item>6.9</item>
+        <item>6.5</item>
+        <item>8.4</item>
+        <item>6.9</item>
+    </string-array>
+
+    <!-- Data TV Series -->
+    <string-array name="title_tv">
+        <item>Dragon Ball</item>
+        <item>Fairy Tail</item>
+        <item>Family Guy</item>
+        <item>Flash</item>
+        <item>GOT</item>
+        <item>Gotham</item>
+        <item>Grey\'s Anatomy</item>
+        <item>Hanna</item>
+        <item>Iron Fist</item>
+        <item>Naruto Shippuden</item>
+    </string-array>
+
+    <string-array name="date_tv">
+        <item>February 26, 1986</item>
+        <item>August 02, 2006</item>
+        <item>January 31, 1999</item>
+        <item>August 07, 2014</item>
+        <item>April 17, 2011</item>
+        <item>September 22, 2014</item>
+        <item>March 27, 2005</item>
+        <item>February 03, 2019</item>
+        <item>March 17, 2017</item>
+        <item>February 15, 2007</item>
+    </string-array>
+
+    <string-array name="description_tv">
+        <item>Dragon Ball follows the adventures of the protagonist Goku, a powerful naive boy, who after meeting Bulma, departs to collect seven hopeful Dragon Balls. After becoming a student of the martial arts master, Master Roshi (also known as Kame Sennin), he and his student, Krillin, entered a tournament that attracted the most powerful warriors in the world.</item>
+        <item>The manga has been adapted into an anime series produced by A-1 Pictures, Dentsu Inc., Satelight, Bridge, and CloverWorks which began broadcasting in Japan on October 12, 2009. In addition, A-1 Pictures has developed nine original video animations and two films animation feature.</item>
+        <item>Family Guy is an American animated sitcom television series created by Seth MacFarlane for Fox Broadcasting Company. The series is centered on Griffin, a family of Peter and Lois\'s parents; their children, Meg, Chris, and Stewie; and their anthropomorphic pet dog, Brian.</item>
+        <item>The Flash is an American superhero television series developed by Greg Berlanti, Andrew Kreisberg, and Geoff Johns, aired on The CW. It\'s based on the DC Comics character Barry Allen / Flash, a costumed super crime fighter with the power to move at superhuman speed. This is a spin-off from Arrow, which exists in the same fictional universe.</item>
+        <item>Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss for HBO. This is an adaptation of A Song of Ice and Fire, George R. R. Martin\'s fantasy novel series, the first is A Game of Thrones. The show was produced and filmed in Belfast and elsewhere in the UK. Filming locations also include Canada, Croatia, Iceland, Malta, Morocco and Spain</item>
+        <item>Gotham is an American crime drama television series developed by Bruno Heller, produced by Warner Bros. Television and is based on characters published by DC Comics and appears in the Batman franchise, especially James Gordon and Bruce Wayne. The series premiered on Fox on September 22, 2014, and ended on April 25, 2019. The series starred Ben McKenzie as Jim Gordon and David Mazouz as Bruce Wayne.</item>
+        <item>Gray \'s Anatomy is an American medical drama television series that premiered on March 27, 2005, on the American Broadcasting Company (ABC) as a mid-season replacement. The fiction series focuses on the lives of surgical interns, residents, and doctors present, as they develop into experienced doctors while trying to maintain their personal lives and relationships.</item>
+        <item>Hanna is an American action television web drama series, based on the 2011 film of the same name, on Prime Video. The series was created and written by David Farr, directed by Sarah Adina Smith, and starring Esme Creed-Miles, Joel Kinnaman, and Mireille Enos. The first episode was available on Amazon Video as a time-limited preview on February 3, 2019. The first full eight episode season was released on March 29, 2019. In April 2019, Amazon updated the series for the second season.</item>
+        <item>Marvel\'s Iron Fist, or simply Iron Fist, is an American web television series created for Netflix by Scott Buck, based on the Marvel Comics character of the same name. This is arranged in the Marvel Cinematic Universe (MCU), sharing continuity with franchise films and is the fourth in a series of events that lead to the Defenders\' crossover miniseries.</item>
+        <item>Naruto: Shippuden is an anime series adapted from Part II of the manga series Masashi Kishimoto, with exactly 500 episodes. It is set two and a half years after Part I in the Naruto universe, following teenage Ninja Naruto Uzumaki and his allies. The series was directed by Hayato Date, and produced by Pierrot and TV Tokyo. It began broadcasting on February 15, 2007 on TV Tokyo, and ended on March 23, 2017</item>
+    </string-array>
+
+    <string-array name="image_tv">
+        <item>@drawable/tv_dragon_ball</item>
+        <item>@drawable/tv_fairytail</item>
+        <item>@drawable/tv_family_guy</item>
+        <item>@drawable/tv_flash</item>
+        <item>@drawable/tv_got</item>
+        <item>@drawable/tv_gotham</item>
+        <item>@drawable/tv_grey_anatomy</item>
+        <item>@drawable/tv_hanna</item>
+        <item>@drawable/tv_iron_fist</item>
+        <item>@drawable/tv_naruto_shipudden</item>
+    </string-array>
+
+    <string-array name="rating_tv">
+        <item>8.5</item>
+        <item>8.0</item>
+        <item>8.1</item>
+        <item>7.8</item>
+        <item>9.1</item>
+        <item>7.8</item>
+        <item>7.6</item>
+        <item>7.5</item>
+        <item>6.5</item>
+        <item>8.5</item>
+    </string-array>
 </resources>
