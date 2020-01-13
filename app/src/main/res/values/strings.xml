@@ -10,6 +10,16 @@
     <string name="ex_item_tv_name">Judul TV Series</string>
     <string name="ex_item_tv_description">Deskripsi TV Series</string>
 
+    <!--Dummy-->
+    <string name="title_detail">Title</string>
+    <string name="title_dummy">title title title title title</string>
+    <string name="date_release_detail">Date Release</string>
+    <string name="date_dummy_detail">Date Date Date Date</string>
+    <string name="rating_dummy_detail">Rating Rating Rating</string>
+    <string name="rating_title_detail">Rating</string>
+    <string name="description_title_detail">Description</string>
+    <string name="lorem">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</string>
+
     <!-- Menu -->
     <string name="change_language">Ubah Bahasa</string>
 
@@ -87,7 +97,7 @@
         <item>Flash</item>
         <item>GOT</item>
         <item>Gotham</item>
-        <item>Grey's Anatomy</item>
+        <item>Grey\'s Anatomy</item>
         <item>Hanna</item>
         <item>Iron Fist</item>
         <item>Naruto Shippuden</item>
@@ -113,9 +123,9 @@
         <item>The Flash adalah serial televisi superhero Amerika yang dikembangkan oleh Greg Berlanti, Andrew Kreisberg, dan Geoff Johns, ditayangkan di The CW. Ini didasarkan pada karakter DC Comics Barry Allen / Flash, seorang pejuang kejahatan super berkostum dengan kekuatan untuk bergerak pada kecepatan manusia super. Ini adalah spin-off dari Arrow, yang ada di alam semesta fiksi yang sama.</item>
         <item>Game of Thrones adalah serial televisi drama fantasi Amerika yang dibuat oleh David Benioff dan D. B. Weiss untuk HBO. Ini adalah adaptasi dari A Song of Ice and Fire, seri novel fantasi George R. R. Martin, yang pertama adalah A Game of Thrones. Acara ini diproduksi dan difilmkan di Belfast dan di tempat lain di Inggris. Lokasi syuting juga termasuk Kanada, Kroasia, Islandia, Malta, Maroko, dan Spanyol</item>
         <item>Gotham adalah serial televisi drama kriminal Amerika yang dikembangkan oleh Bruno Heller, diproduksi oleh Warner Bros. Television dan berdasarkan pada karakter yang diterbitkan oleh DC Comics dan muncul dalam waralaba Batman, terutama James Gordon dan Bruce Wayne. Serial ini ditayangkan perdana di Fox pada 22 September 2014, dan berakhir pada 25 April 2019. Serial ini dibintangi Ben McKenzie sebagai Jim Gordon dan David Mazouz sebagai Bruce Wayne.</item>
-        <item>Grey's Anatomy adalah serial televisi drama medis Amerika yang ditayangkan perdana pada tanggal 27 Maret 2005, di American Broadcasting Company (ABC) sebagai pengganti pertengahan musim. Seri fiksi berfokus pada kehidupan magang bedah, penghuni, dan dokter yang hadir, ketika mereka berkembang menjadi dokter berpengalaman sambil berusaha mempertahankan kehidupan pribadi dan hubungan.</item>
+        <item>Grey\'s Anatomy adalah serial televisi drama medis Amerika yang ditayangkan perdana pada tanggal 27 Maret 2005, di American Broadcasting Company (ABC) sebagai pengganti pertengahan musim. Seri fiksi berfokus pada kehidupan magang bedah, penghuni, dan dokter yang hadir, ketika mereka berkembang menjadi dokter berpengalaman sambil berusaha mempertahankan kehidupan pribadi dan hubungan.</item>
         <item>Hanna adalah serial televisi web drama aksi Amerika, berdasarkan film 2011 dengan nama yang sama, di Prime Video. Serial ini dibuat dan ditulis oleh David Farr, disutradarai oleh Sarah Adina Smith, dan dibintangi oleh Esme Creed-Miles, Joel Kinnaman, dan Mireille Enos. Episode pertama tersedia di Amazon Video sebagai pratinjau terbatas waktu pada 3 Februari 2019. Musim penuh delapan episode pertama dirilis pada 29 Maret 2019. Pada April 2019, Amazon memperbarui seri untuk musim kedua.</item>
-        <item>Marvel's Iron Fist, atau sekadar Iron Fist, adalah serial televisi web Amerika yang dibuat untuk Netflix oleh Scott Buck, berdasarkan karakter Marvel Comics dengan nama yang sama. Ini diatur dalam Marvel Cinematic Universe (MCU), berbagi kontinuitas dengan film-film franchise dan merupakan yang keempat dalam serangkaian acara yang mengarah ke miniseri crossover The Defenders.</item>
+        <item>Marvel\'s Iron Fist, atau sekadar Iron Fist, adalah serial televisi web Amerika yang dibuat untuk Netflix oleh Scott Buck, berdasarkan karakter Marvel Comics dengan nama yang sama. Ini diatur dalam Marvel Cinematic Universe (MCU), berbagi kontinuitas dengan film-film franchise dan merupakan yang keempat dalam serangkaian acara yang mengarah ke miniseri crossover The Defenders.</item>
         <item>Naruto: Shippuden adalah serial anime yang diadaptasi dari Bagian II dari seri manga Masashi Kishimoto, dengan tepat 500 episode. Sudah diatur dua setengah tahun setelah Bagian I di alam semesta Naruto, mengikuti remaja Ninja Naruto Uzumaki dan sekutunya. Serial ini disutradarai oleh Hayato Date, dan diproduksi oleh Pierrot dan TV Tokyo. Ini mulai mengudara pada 15 Februari 2007 di TV Tokyo, dan berakhir pada 23 Maret 2017</item>
     </string-array>
 
