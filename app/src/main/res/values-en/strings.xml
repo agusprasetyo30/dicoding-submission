@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ENGLISH -->
+    <string name="app_name">Submission 3</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">TV</string>
+
+    <!-- data Example card view -->
+    <string name="ex_item_film_name">Film\'s Title</string>
+    <string name="ex_item_film_description">Film\'s Description</string>
+    <string name="ex_item_tv_name">TV Series Title</string>
+    <string name="ex_item_tv_description">TV Series Description</string>
+
+    <!--Dummy-->
+    <string name="title_detail">Title</string>
+    <string name="title_dummy">title title title title title</string>
+    <string name="date_release_detail">Date Release</string>
+    <string name="date_dummy_detail">Date Date Date Date</string>
+    <string name="rating_dummy_detail">Rating Rating Rating</string>
+    <string name="rating_title_detail">Rating</string>
+    <string name="description_title_detail">Description</string>
+    <string name="lorem">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</string>
+
+    <!-- Menu -->
+    <string name="change_language">Change Language</string>
+</resources>

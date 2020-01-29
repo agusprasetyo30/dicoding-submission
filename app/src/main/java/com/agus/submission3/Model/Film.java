@@ -14,27 +14,6 @@ public class Film implements Parcelable
 	
 	public Film() {}
 	
-	protected Film(Parcel in) {
-		film_id = in.readInt();
-		film_image = in.readString();
-		film_title = in.readString();
-		film_description = in.readString();
-		film_date = in.readString();
-		film_rating = in.readInt();
-	}
-	
-	public static final Creator<Film> CREATOR = new Creator<Film>() {
-		@Override
-		public Film createFromParcel(Parcel in) {
-			return new Film(in);
-		}
-		
-		@Override
-		public Film[] newArray(int size) {
-			return new Film[size];
-		}
-	};
-	
 	public int getFilm_id() {
 		return film_id;
 	}
@@ -82,6 +61,27 @@ public class Film implements Parcelable
 	public void setFilm_rating(int film_rating) {
 		this.film_rating = film_rating;
 	}
+	
+	protected Film(Parcel in) {
+		film_id = in.readInt();
+		film_image = in.readString();
+		film_title = in.readString();
+		film_description = in.readString();
+		film_date = in.readString();
+		film_rating = in.readInt();
+	}
+	
+	public static final Creator<Film> CREATOR = new Creator<Film>() {
+		@Override
+		public Film createFromParcel(Parcel in) {
+			return new Film(in);
+		}
+		
+		@Override
+		public Film[] newArray(int size) {
+			return new Film[size];
+		}
+	};
 	
 	@Override
 	public int describeContents() {

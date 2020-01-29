@@ -1,49 +1,71 @@
 package com.agus.submission3.Fragment;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agus.submission3.R;
 import com.agus.submission3.Adapter.CardViewTVAdapter;
 import com.agus.submission3.Model.TV;
+import com.agus.submission3.ViewModel.MainViewModel;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TVFragment extends Fragment {
 	private RecyclerView rvTV;
-	private ArrayList<TV> list = new ArrayList<>();
+	private ProgressBar progressBar;
+	private CardViewTVAdapter cardViewTVAdapter;
+	private MainViewModel mainViewModel;
+	private String language = Locale.getDefault().toLanguageTag();
 	
 	public TVFragment() {
 		// Required empty public constructor
 	}
 	
 	@Override
-	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+	{
 		super.onViewCreated(view, savedInstanceState);
-		
-//		rvTV = view.findViewById(R.id.rv_tv);
+		rvTV = view.findViewById(R.id.rv_tv);
+		progressBar = view.findViewById(R.id.progressBarTV);
+		showLoading(true);
 
-//		list.addAll(getListTV());
-		
-//		showRecyclerCardView(view);
+		showRecyclerCardView(view);
 	}
 	
-	private void showRecyclerCardView(View view){
+	private void showRecyclerCardView(final View view)
+	{
 		rvTV.setLayoutManager(new LinearLayoutManager(view.getContext()));
-		CardViewTVAdapter cardViewTVAdapter = new CardViewTVAdapter(list);
-		rvTV.setAdapter(cardViewTVAdapter );
+		
+		cardViewTVAdapter = new CardViewTVAdapter();
+		cardViewTVAdapter.notifyDataSetChanged();
+		
+		// Inisialisasi View Model
+		mainViewModel = new ViewModelProvider(getViewModelStore(), new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+		mainViewModel.setTV(view, language); // memanggil API dan mengisi ke dalam arrayList
+		
+		mainViewModel.getTV().observe(getViewLifecycleOwner(), new Observer<ArrayList<TV>>() { // Mengambil data arraylist di ViewModel dan mengisi ke dalam data Adapter
+			@Override
+			public void onChanged(ArrayList<TV> films) {
+				if (films != null) {
+					cardViewTVAdapter.setData(films);
+					showLoading(false);
+				}
+			}
+		});
+		
+		rvTV.setAdapter(cardViewTVAdapter); // Mengisi data recycler view
 	}
 	
 	@Override
@@ -53,26 +75,12 @@ public class TVFragment extends Fragment {
 		return inflater.inflate(R.layout.fragment_tv, container, false);
 	}
 	
-	public ArrayList<TV> getListTV() {
-		TypedArray dataImage;
-		
-		String[] dataTitle = getResources().getStringArray(R.array.title_tv);
-		String[] dataDescription = getResources().getStringArray(R.array.description_tv);
-		String[] dataDate = getResources().getStringArray(R.array.date_tv);
-		String[] dataRating = getResources().getStringArray(R.array.rating_tv);
-//		dataImage = getResources().obtainTypedArray(R.array.image_tv);
-		
-		ArrayList<TV> listTV = new ArrayList<>();
-		for (int i = 0; i < dataTitle.length; i++) {
-			TV tv = new TV();
-			tv.setTv_title(dataTitle[i]);
-			tv.setTv_description(dataDescription[i]);
-//			tv.setTv_image(dataImage.getResourceId(i, -1));
-			tv.setTv_date(dataDate[i]);
-			tv.setTv_rating(dataRating[i]);
-			listTV.add(tv);
+	// Progress bar
+	private void showLoading(Boolean state) {
+		if (state) {
+			progressBar.setVisibility(View.VISIBLE);
+		} else {
+			progressBar.setVisibility(View.GONE);
 		}
-		
-		return listTV;
 	}
 }

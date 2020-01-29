@@ -40,6 +40,8 @@ public class DetailActivity extends AppCompatActivity {
 	
 	private void initComponent()
 	{
+		String notice = "Tidak ada deskripsi dalam bahasa indonesia";
+		
 		if (status.equalsIgnoreCase("FILM")) {
 			Film film = getIntent().getParcelableExtra(EXTRA_INTENT_FILM);
 			
@@ -51,15 +53,19 @@ public class DetailActivity extends AppCompatActivity {
 			txtTitle.setText(film.getFilm_title());
 			txtDate.setText(film.getFilm_date());
 			txtRating.setText(String.valueOf(film.getFilm_rating()));
-			txtDescription.setText(film.getFilm_description());
+			txtDescription.setText(film.getFilm_description().length() == 0 ? notice : film.getFilm_description());
 			
 		} else if (status.equalsIgnoreCase("TV")) {
 			TV tv = getIntent().getParcelableExtra(EXTRA_INTENT_TV);
-//			imgCoba.setImageResource(tv.getTv_image());
+			
+			Picasso.get()
+				.load(tv.getTv_image())
+				.fit()
+				.into(imgCoba);
 			txtTitle.setText(tv.getTv_title());
 			txtDate.setText(tv.getTv_date());
-			txtRating.setText(tv.getTv_rating());
-			txtDescription.setText(tv.getTv_description());
+			txtRating.setText(String.valueOf(tv.getTv_rating()));
+			txtDescription.setText(tv.getTv_description().length() == 0 ? notice : tv.getTv_description());
 		}
 		
 	}

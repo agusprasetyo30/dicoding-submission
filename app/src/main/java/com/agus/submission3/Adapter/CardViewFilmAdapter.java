@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +17,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapter.CardViewViewHolder> {
+public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapter.CardViewViewHolder>
+{
 	private ArrayList<Film> listFilm = new ArrayList<>();
 	
 	public CardViewFilmAdapter() {}
@@ -33,13 +33,15 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 	
 	@NonNull
 	@Override
-	public CardViewFilmAdapter.CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+	public CardViewFilmAdapter.CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+	{
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cardview_film, parent, false);
 		return new CardViewViewHolder(view);
 	}
 	
 	@Override
-	public void onBindViewHolder(@NonNull CardViewFilmAdapter.CardViewViewHolder holder, int position) {
+	public void onBindViewHolder(@NonNull CardViewFilmAdapter.CardViewViewHolder holder, int position)
+	{
 		final Film film = listFilm.get(position);
 		
 		holder.bind(film);
@@ -56,15 +58,22 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 	}
 	
 	@Override
-	public int getItemCount() {
-		return listFilm.size();
+	public int getItemCount()
+	{
+		if (listFilm == null) {
+			return 0;
+		} else {
+			return listFilm.size();
+		}
 	}
 	
-	public class CardViewViewHolder extends RecyclerView.ViewHolder {
-		ImageView img_film;
-		TextView tvTitleFilm, tvDescription;
+	public class CardViewViewHolder extends RecyclerView.ViewHolder
+	{
+		private ImageView img_film;
+		private TextView tvTitleFilm, tvDescription;
 		
-		public CardViewViewHolder(@NonNull View itemView) {
+		public CardViewViewHolder(@NonNull View itemView)
+		{
 			super(itemView);
 			
 			img_film = itemView.findViewById(R.id.img_photo_film);
@@ -72,7 +81,9 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 			tvDescription = itemView.findViewById(R.id.tv_film_description);
 		}
 		
-		void bind(final Film film) {
+		// Mengisi data ke dalam item
+		public void bind(final Film film) {
+			String notice = "Tidak ada deskripsi dalam bahasa indonesia";
 			
 			Picasso.get()
 				.load(film.getFilm_image())
@@ -80,8 +91,8 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 				.into(img_film);
 			
 			tvTitleFilm.setText(film.getFilm_title());
-			tvDescription.setText(film.getFilm_description());
 			
+			tvDescription.setText(film.getFilm_description().length() == 0 ? notice : film.getFilm_description());
 		}
 		
 	}

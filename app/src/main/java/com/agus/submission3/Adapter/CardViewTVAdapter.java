@@ -13,14 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.agus.submission3.DetailActivity;
 import com.agus.submission3.R;
 import com.agus.submission3.Model.TV;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class CardViewTVAdapter extends RecyclerView.Adapter<CardViewTVAdapter.CardViewViewHolder>  {
-	private ArrayList<TV> listTV;
+	private ArrayList<TV> listTV = new ArrayList<>();
 	
-	public CardViewTVAdapter(ArrayList<TV> listTV) {
-		this.listTV = listTV;
+	public CardViewTVAdapter() {
+	}
+	
+	// Menambahkan data ke dalam array list
+	public void setData(ArrayList<TV> item)
+	{
+		listTV.clear();
+		listTV.addAll(item);
+		notifyDataSetChanged();
 	}
 	
 	@NonNull
@@ -33,10 +41,7 @@ public class CardViewTVAdapter extends RecyclerView.Adapter<CardViewTVAdapter.Ca
 	@Override
 	public void onBindViewHolder(@NonNull CardViewTVAdapter.CardViewViewHolder holder, int position) {
 		final TV tv = listTV.get(position);
-		
-//		holder.img_TV.setImageResource(tv.getTv_image());
-		holder.tvTitleTV.setText(tv.getTv_title());
-		holder.tvDescription.setText(tv.getTv_description());
+		holder.bind(tv);
 		
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -51,20 +56,40 @@ public class CardViewTVAdapter extends RecyclerView.Adapter<CardViewTVAdapter.Ca
 	}
 	
 	@Override
-	public int getItemCount() {
-		return listTV.size();
+	public int getItemCount()
+	{
+		if (listTV == null) {
+			return 0;
+		} else {
+			return listTV.size();
+		}
 	}
 	
-	public class CardViewViewHolder extends RecyclerView.ViewHolder {
-		ImageView img_TV;
-		TextView tvTitleTV, tvDescription;
+	public class CardViewViewHolder extends RecyclerView.ViewHolder
+	{
+		private ImageView img_TV;
+		private TextView tvTitleTV, tvDescription;
 		
-		public CardViewViewHolder(@NonNull View itemView) {
+		public CardViewViewHolder(@NonNull View itemView)
+		{
 			super(itemView);
 			
 			img_TV = itemView.findViewById(R.id.img_photo_tv);
 			tvTitleTV = itemView.findViewById(R.id.tv_item_tv_name);
 			tvDescription = itemView.findViewById(R.id.tv_tv_description);
+		}
+		
+		public void bind(final TV tv)
+		{
+			String notice = "Tidak ada deskripsi dalam bahasa indonesia";
+			
+			Picasso.get()
+				.load(tv.getTv_image())
+				.fit()
+				.into(img_TV);
+			
+			tvTitleTV.setText(tv.getTv_title());
+			tvDescription.setText(tv.getTv_description().length() == 0 ? notice : tv.getTv_description());
 		}
 	}
 }

@@ -1,9 +1,9 @@
 package com.agus.submission3.Fragment;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,13 +19,14 @@ import com.agus.submission3.Model.Film;
 import com.agus.submission3.ViewModel.MainViewModel;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class FilmFragment extends Fragment {
-	RecyclerView rvFilm;
-	CardViewFilmAdapter cardViewFilmAdapter;
-	MainViewModel mainViewModel;
-	
-	ArrayList<Film> list = new ArrayList<>();
+	private RecyclerView rvFilm;
+	private ProgressBar progressBar;
+	private CardViewFilmAdapter cardViewFilmAdapter;
+	private MainViewModel mainViewModel;
+	private String language = Locale.getDefault().toLanguageTag();
 	
 	public FilmFragment() {
 		// Required empty public constructor
@@ -35,9 +36,9 @@ public class FilmFragment extends Fragment {
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		rvFilm = view.findViewById(R.id.rv_film);
+		progressBar = view.findViewById(R.id.progressBarFilm);
+		showLoading(true);
 		
-		
-//		list.addAll(getListFilm());
 		showRecyclerCardView(view);
 	}
 	
@@ -48,47 +49,36 @@ public class FilmFragment extends Fragment {
 		return inflater.inflate(R.layout.fragment_film, container, false);
 	}
 	
+	// Menampilkan Recycler View
 	private void showRecyclerCardView(View view){
 		rvFilm.setLayoutManager(new LinearLayoutManager(view.getContext()));
 		
 		cardViewFilmAdapter = new CardViewFilmAdapter();
 		cardViewFilmAdapter.notifyDataSetChanged();
-		rvFilm.setAdapter(cardViewFilmAdapter);
 		
+		// Inisialisasi View Model
 		mainViewModel = new ViewModelProvider(getViewModelStore(), new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
-		mainViewModel.setFilm();
+		mainViewModel.setFilm(view, language); // memanggil API dan mengisi ke dalam arrayList
 		
-		mainViewModel.getFilm().observe(getViewLifecycleOwner(), new Observer<ArrayList<Film>>() {
+		mainViewModel.getFilm().observe(getViewLifecycleOwner(), new Observer<ArrayList<Film>>() { // Mengambil data arraylist di ViewModel dan mengisi ke dalam data Adapter
 			@Override
 			public void onChanged(ArrayList<Film> films) {
 				if (films != null) {
 					cardViewFilmAdapter.setData(films);
+					showLoading(false);
 				}
 			}
 		});
+		
+		rvFilm.setAdapter(cardViewFilmAdapter); // Mengisi data recycler view
 	}
 	
-	public ArrayList<Film> getListFilm() {
-		TypedArray dataImage;
-		
-		String[] dataTitle = getResources().getStringArray(R.array.title_film);
-		String[] dataDescription = getResources().getStringArray(R.array.description_film);
-		String[] dataDate = getResources().getStringArray(R.array.date_film);
-		String[] dataRating = getResources().getStringArray(R.array.rating_film);
-		
-		dataImage = getResources().obtainTypedArray(R.array.image_film);
-		
-		ArrayList<Film> listFilm = new ArrayList<>();
-		for (int i = 0; i < dataTitle.length; i++) {
-			Film film = new Film();
-			film.setFilm_title(dataTitle[i]);
-			film.setFilm_description(dataDescription[i]);
-//			film.setFilm_image(dataImage.getResourceId(i, -1));
-			film.setFilm_date(dataDate[i]);
-//			film.setFilm_rating(dataRating[i]);
-			listFilm.add(film);
+	// Progress bar
+	private void showLoading(Boolean state) {
+		if (state) {
+			progressBar.setVisibility(View.VISIBLE);
+		} else {
+			progressBar.setVisibility(View.GONE);
 		}
-		
-		return listFilm;
 	}
 }
