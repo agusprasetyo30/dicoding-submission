@@ -1,0 +1,27 @@
+<resources>
+    <!-- BAHASA INDONESIA -->
+    <string name="app_name">Submission 4</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">TV</string>
+
+    <!-- contoh data card view -->
+    <string name="ex_item_film_name">Judul Film</string>
+    <string name="ex_item_film_description">Deskripsi Film</string>
+    <string name="ex_item_tv_name">Judul TV Series</string>
+    <string name="ex_item_tv_description">Deskripsi TV Series</string>
+
+    <!--Dummy-->
+    <string name="title_detail">Judul</string>
+    <string name="title_dummy">judul judul judul judul judul</string>
+    <string name="date_release_detail">Tanggal Rilis</string>
+    <string name="date_dummy_detail">Tanggal Tanggal Tanggal Tanggal</string>
+    <string name="rating_dummy_detail">Rating Rating Rating</string>
+    <string name="rating_title_detail">Rating</string>
+    <string name="description_title_detail">Deskripsi</string>
+    <string name="lorem">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</string>
+
+    <!-- Menu -->
+    <string name="change_language">Ubah Bahasa</string>
+    <string name="image_description">Gambar pada Deskripsi detail</string>
+
+</resources>
