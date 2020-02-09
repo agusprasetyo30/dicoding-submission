@@ -81,15 +81,13 @@ public class CardViewTVAdapter extends RecyclerView.Adapter<CardViewTVAdapter.Ca
 		
 		public void bind(final TV tv)
 		{
-			String notice = "Tidak ada deskripsi dalam bahasa indonesia";
-			
 			Picasso.get()
 				.load(tv.getTv_image())
 				.fit()
 				.into(img_TV);
 			
 			tvTitleTV.setText(tv.getTv_title());
-			tvDescription.setText(tv.getTv_description().length() == 0 ? notice : tv.getTv_description());
+			tvDescription.setText(tv.getTv_description());
 		}
 	}
 }

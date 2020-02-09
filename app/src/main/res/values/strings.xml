@@ -22,6 +22,11 @@
 
     <!-- Menu -->
     <string name="change_language">Ubah Bahasa</string>
-    <string name="image_description">Gambar pada Deskripsi detail</string>
+    <string name="add_favorite_menu">Tambah Favorit</string>
 
+    <string name="detail_activity_title">Detail Activity</string>
+    <string name="image_description">Gambar pada Deskripsi detail</string>
+    <string name="film_image_description">Gambar Deskripsi film</string>
+    <string name="tv_image_description">Gambar Deskripsi TV</string>
+    <string name="favorite_title_menu">Favorit</string>
 </resources>

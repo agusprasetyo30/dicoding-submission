@@ -3,13 +3,37 @@ package com.agus.submission4.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "tb_fav_tv")
 public class TV implements Parcelable
 {
+	// primary key ID
+	@PrimaryKey
+	@NonNull
 	private int tv_id;
+	
+	// Kolom fav_tv_image
+	@ColumnInfo(name = "fav_tv_image")
 	private String tv_image;
+	
+	// Kolom fav_tv_title
+	@ColumnInfo(name = "fav_tv_title")
 	private String tv_title;
+	
+	// Kolom fav_tv_description
+	@ColumnInfo(name = "fav_tv_description")
 	private String tv_description;
+	
+	// Kolom fav_tv_date
+	@ColumnInfo(name = "fav_tv_date")
 	private String tv_date;
+	
+	// Kolom fav_tv_rating
+	@ColumnInfo(name = "fav_tv_rating")
 	private int tv_rating;
 	
 	public TV() {

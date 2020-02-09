@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,7 +58,7 @@ public class FilmFragment extends Fragment {
 		cardViewFilmAdapter.notifyDataSetChanged();
 		
 		// Inisialisasi View Model
-		mainViewModel = new ViewModelProvider(getViewModelStore(), new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+		this.mainViewModel = ViewModelProviders.of(FilmFragment.this).get(MainViewModel.class);
 		mainViewModel.setFilm(view, language); // memanggil API dan mengisi ke dalam arrayList
 		
 		mainViewModel.getFilm().observe(getViewLifecycleOwner(), new Observer<ArrayList<Film>>() { // Mengambil data arraylist di ViewModel dan mengisi ke dalam data Adapter

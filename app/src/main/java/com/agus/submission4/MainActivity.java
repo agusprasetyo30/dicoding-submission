@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,9 +38,16 @@ public class MainActivity extends AppCompatActivity {
 	
 	@Override
 	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-		if (item.getItemId() == R.id.menu_change_language) {
-			Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-			startActivity(mIntent);
+		switch (item.getItemId()) {
+			case R.id.menu_change_language :
+				Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+				startActivity(mIntent);
+				break;
+				
+			case R.id.menu_favorite :
+				Intent mIntentFavorite = new Intent(MainActivity.this, FavoriteActivity.class);
+				startActivity(mIntentFavorite);
+				break;
 		}
 		
 		return super.onOptionsItemSelected(item);

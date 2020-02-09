@@ -1,15 +1,20 @@
 package com.agus.submission4.viewmodel;
 
+import android.app.Application;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.agus.submission4.model.Film;
 import com.agus.submission4.model.TV;
+import com.agus.submission4.repository.FavFilmRepository;
+import com.agus.submission4.repository.FavTVRepository;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -18,18 +23,32 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainViewModel extends ViewModel
+public class MainViewModel extends AndroidViewModel
 {
+	// Sebagai pesan kalau tidak ada deskripsi dalam bahasa indonesia/kosong
+	private String notice = "Tidak ada deskripsi dalam bahasa indonesia";
 	// API KEY
 	private static final String API_KEY = "be07a5b2e7b720776a91a17880225678";
 	//	data list film
 	private MutableLiveData<ArrayList<Film>> listFilm = new MutableLiveData<>();
 	// data list TV
 	private MutableLiveData<ArrayList<TV>> listTV = new MutableLiveData<>();
+	
+	// Import Repository
+	private FavFilmRepository favFilmRepository;
+	private FavTVRepository favTVRepository;
+	
+	public MainViewModel(@NonNull Application application) {
+		super(application);
+		
+		this.favFilmRepository = new FavFilmRepository(application);
+//		this.favTVRepository = new FavTVRepository(application);
+	}
 	
 	// Mengisi data FILM API ke dalam Array List
 	public void setFilm(final View view, String language)
@@ -57,7 +76,7 @@ public class MainViewModel extends ViewModel
 						filmItem.setFilm_title(getFilm.getString("title"));
 						filmItem.setFilm_image(path + getFilm.getString("poster_path"));
 						filmItem.setFilm_date(getFilm.getString("release_date"));
-						filmItem.setFilm_description(getFilm.getString("overview"));
+						filmItem.setFilm_description(getFilm.getString("overview").length() == 0 ? notice : getFilm.getString("overview"));
 						filmItem.setFilm_rating(getFilm.getInt("vote_average"));
 						
 						listItems.add(filmItem);
@@ -112,7 +131,7 @@ public class MainViewModel extends ViewModel
 						tvItem.setTv_title(getTV.getString("name"));
 						tvItem.setTv_image(path + getTV.getString("poster_path"));
 						tvItem.setTv_date(getTV.getString("first_air_date"));
-						tvItem.setTv_description(getTV.getString("overview"));
+						tvItem.setTv_description(getTV.getString("overview").length() == 0 ? notice : getTV.getString("overview"));
 						tvItem.setTv_rating(getTV.getInt("vote_average"));
 						
 						listItems.add(tvItem);
@@ -139,5 +158,24 @@ public class MainViewModel extends ViewModel
 	public LiveData<ArrayList<TV>> getTV()
 	{
 		return listTV;
+	}
+
+	// mengambil data DB dari repository
+	public LiveData<List<Film>> getFavFilmList()
+	{
+		// Memanggil repository
+		return favFilmRepository.getFavFilmList();
+	}
+	
+	// menyimpan data favorit film
+	public void saveFavFilm(Film film)
+	{
+		this.favFilmRepository.saveFavFilm(film);
+	}
+	
+	// menghapus data favorit film
+	public void deleteFavFilm(Film film)
+	{
+		this.favFilmRepository.deleteFavFilm(film);
 	}
 }

@@ -23,5 +23,11 @@
 
     <!-- Menu -->
     <string name="change_language">Change Language</string>
-    <string name="image_description">Image For Details Description</string>
+    <string name="favorite_title_menu">Favorite</string>
+    <string name="add_favorite_menu">Add Favorite</string>
+    <string name="detail_activity_title">Detail Activity</string>
+    <string name="image_description">Image Description For Details</string>
+    <string name="film_image_description">Image Description for Film</string>
+    <string name="tv_image_description">Image Description for TV</string>
+
 </resources>

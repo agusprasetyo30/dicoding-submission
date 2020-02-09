@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,7 +52,7 @@ public class TVFragment extends Fragment {
 		cardViewTVAdapter.notifyDataSetChanged();
 		
 		// Inisialisasi View Model
-		mainViewModel = new ViewModelProvider(getViewModelStore(), new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+		this.mainViewModel = ViewModelProviders.of(TVFragment.this).get(MainViewModel.class);
 		mainViewModel.setTV(view, language); // memanggil API dan mengisi ke dalam arrayList
 		
 		mainViewModel.getTV().observe(getViewLifecycleOwner(), new Observer<ArrayList<TV>>() { // Mengambil data arraylist di ViewModel dan mengisi ke dalam data Adapter
