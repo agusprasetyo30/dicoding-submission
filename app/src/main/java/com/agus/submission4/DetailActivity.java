@@ -62,6 +62,7 @@ public class DetailActivity extends AppCompatActivity {
 				Log.d("CEK", "ID : " + newFavFilm.getFilm_id() + " | image Link : " + newFavFilm.getFilm_image() +
 					" | Title : " + newFavFilm.getFilm_title() + " | Date : " + newFavFilm.getFilm_date() + " | Rating : " + newFavFilm.getFilm_rating() +
 					" | Description : " + newFavFilm.getFilm_description());
+				
 			} else if (status.equalsIgnoreCase("TV")) {
 			
 			}
@@ -76,12 +77,12 @@ public class DetailActivity extends AppCompatActivity {
 		
 	private void initData()
 	{
-		txtDataID = findViewById(R.id.data_id);
-		imgCoba = findViewById(R.id.img_coba);
-		txtTitle = findViewById(R.id.tv_title_detail);
-		txtDate = findViewById(R.id.tv_date_detail);
-		txtRating = findViewById(R.id.tv_rating_detail);
-		txtDescription = findViewById(R.id.tv_description_detail);
+		txtDataID = findViewById(R.id.data_id_favorite);
+		imgCoba = findViewById(R.id.img_favorite_detail);
+		txtTitle = findViewById(R.id.tv_title_detail_favorite);
+		txtDate = findViewById(R.id.tv_date_detail_favorite);
+		txtRating = findViewById(R.id.tv_rating_detail_favorite);
+		txtDescription = findViewById(R.id.tv_description_detail_favorite);
 	}
 	
 	private void initComponent()

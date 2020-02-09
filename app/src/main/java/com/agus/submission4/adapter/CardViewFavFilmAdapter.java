@@ -1,14 +1,17 @@
 package com.agus.submission4.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.agus.submission4.DetailFavoriteActivity;
 import com.agus.submission4.R;
 import com.agus.submission4.model.Film;
 import com.squareup.picasso.Picasso;
@@ -42,16 +45,17 @@ public class CardViewFavFilmAdapter extends RecyclerView.Adapter<CardViewFavFilm
 		final Film film = listFavFilm.get(position);
 		
 		holder.bind(film);
-//		holder.itemView.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View view) {
-//				DetailActivity.status = "FILM";
-//
-//				Intent intent = new Intent(view.getContext(), DetailActivity.class);
-//				intent.putExtra(DetailActivity.EXTRA_INTENT_FILM, film);
+		holder.itemView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				DetailFavoriteActivity.status = "FILM";
+				
+				Toast.makeText(view.getContext(), film.getFilm_title(), Toast.LENGTH_SHORT).show();
+//				Intent intent = new Intent(view.getContext(), DetailFavoriteActivity.class);
+//				intent.putExtra(DetailFavoriteActivity.EXTRA_INTENT_FILM, film);
 //				view.getContext().startActivity(intent);
-//			}
-//		});
+			}
+		});
 	}
 	
 	@Override

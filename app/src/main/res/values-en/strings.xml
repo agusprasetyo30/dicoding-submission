@@ -25,6 +25,8 @@
     <string name="change_language">Change Language</string>
     <string name="favorite_title_menu">Favorite</string>
     <string name="add_favorite_menu">Add Favorite</string>
+    <string name="delete_favorite_menu">Hapus Favorite</string>
+
     <string name="detail_activity_title">Detail Activity</string>
     <string name="image_description">Image Description For Details</string>
     <string name="film_image_description">Image Description for Film</string>

@@ -23,6 +23,7 @@
     <!-- Menu -->
     <string name="change_language">Ubah Bahasa</string>
     <string name="add_favorite_menu">Tambah Favorit</string>
+    <string name="delete_favorite_menu">Hapus Favorite</string>
 
     <string name="detail_activity_title">Detail Activity</string>
     <string name="image_description">Gambar pada Deskripsi detail</string>
