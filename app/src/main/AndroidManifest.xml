@@ -14,7 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".DetailFavoriteActivity"></activity>
         <activity
             android:name=".FavoriteActivity"
             android:parentActivityName=".MainActivity" />

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,11 @@ public class DetailActivity extends AppCompatActivity {
 	
 	public static final String EXTRA_INTENT_FILM = "extra_intent_film";
 	public static final String EXTRA_INTENT_TV = "extra_intent_tv";
+	// Variabel ini digunakan untuk menentukan apakah data yang dipilih kategori TV atau Film
 	public static String status = "FILM";
+	// Variabel ini digunakan untuk menentukan apakah data tersebut dari API atau DB
+	public static String dataType = "API";
+	
 	private Film film;
 	private TV tv;
 	
@@ -35,8 +40,15 @@ public class DetailActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail);
-		setTitle(R.string.detail_activity_title);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		// Menampilkan title sesuai denegan type data
+		if (dataType.equalsIgnoreCase("API")) {
+			setTitle(R.string.detail_activity_title);
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		} else if ((dataType.equalsIgnoreCase("DB"))) {
+			setTitle(R.string.detail_favorite_activity_title);
+			getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+		}
 		
 		this.mainViewModel = ViewModelProviders.of(DetailActivity.this).get(MainViewModel.class);
 		
@@ -46,34 +58,69 @@ public class DetailActivity extends AppCompatActivity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_favorite, menu);
+		if (dataType.equalsIgnoreCase("API")) {
+			getMenuInflater().inflate(R.menu.menu_favorite, menu);
+			
+		} else if (dataType.equalsIgnoreCase("DB")) {
+			getMenuInflater().inflate(R.menu.menu_favorite_detail, menu);
+		}
 		return super.onCreateOptionsMenu(menu);
 	}
 	
-	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-		if (item.getItemId() == R.id.add_favorite) {
-			if (status.equalsIgnoreCase("FILM")) {
-				Film newFavFilm = this.film;
+	public boolean onOptionsItemSelected(@NonNull MenuItem item)
+	{
+		switch(item.getItemId())
+		{
+			case R.id.add_favorite: // tombol tambah favorit
+				if (status.equalsIgnoreCase("FILM")) {
+						Film newFavFilm = this.film;
+						
+						this.mainViewModel.saveFavFilm(newFavFilm);
+						Toast.makeText(this, R.string.success_message_add_favorite_film, Toast.LENGTH_SHORT).show();
+						
+						Log.d("CEK", "Save Sukses");
+						Log.d("CEK", "ID : " + newFavFilm.getFilm_id() + " | image Link : " + newFavFilm.getFilm_image() +
+							" | Title : " + newFavFilm.getFilm_title() + " | Date : " + newFavFilm.getFilm_date() + " | Rating : " + newFavFilm.getFilm_rating() +
+							" | Description : " + newFavFilm.getFilm_description());
+					
+				} else if (status.equalsIgnoreCase("TV")) {
+						TV newFavTV = this.tv;
+						
+						this.mainViewModel.saveFavTV(newFavTV);
+						Toast.makeText(this, R.string.success_message_add_favorite_tv, Toast.LENGTH_SHORT).show();
+						
+						Log.d("CEK", "Save Sukses");
+						Log.d("CEK", "ID : " + newFavTV.getTv_id() + " | image Link : " + newFavTV.getTv_image() +
+							" | Title : " + newFavTV.getTv_title() + " | Date : " + newFavTV.getTv_date() + " | Rating : " + newFavTV.getTv_rating() +
+							" | Description : " + newFavTV.getTv_description());
+				}
 				
-				this.mainViewModel.saveFavFilm(newFavFilm);
-				Toast.makeText(this, "Tambah Favorit film sukses", Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(DetailActivity.this, MainActivity.class);
+				startActivity(i);
+				finish();
 				
-				Log.d("CEK", "Save Sukses");
-				Log.d("CEK", "ID : " + newFavFilm.getFilm_id() + " | image Link : " + newFavFilm.getFilm_image() +
-					" | Title : " + newFavFilm.getFilm_title() + " | Date : " + newFavFilm.getFilm_date() + " | Rating : " + newFavFilm.getFilm_rating() +
-					" | Description : " + newFavFilm.getFilm_description());
+			break;
 				
-			} else if (status.equalsIgnoreCase("TV")) {
-			
-			}
-			
-			Intent i = new Intent(DetailActivity.this, FavoriteActivity.class);
-			startActivity(i);
-			finish();
+			case R.id.delete_favorite: // tombol hapus favorit
+				if (status.equalsIgnoreCase("FILM")) {
+					Film deleteFavFilm = this.film;
+					this.mainViewModel.deleteFavFilm(deleteFavFilm);
+					Toast.makeText(this, R.string.success_delete_favorit_film, Toast.LENGTH_SHORT).show();
+					
+				} else if (status.equalsIgnoreCase("TV")) {
+					TV deleteFavTV = this.tv;
+					this.mainViewModel.deleteFavTV(deleteFavTV);
+					Toast.makeText(this, R.string.success_delete_favorit_tv, Toast.LENGTH_SHORT).show();
+				}
+				
+				Intent favActivityIntent = new Intent(DetailActivity.this, FavoriteActivity.class);
+				startActivity(favActivityIntent);
+				finish();
+			break;
+		}
+			return super.onOptionsItemSelected(item);
 		}
 		
-		return super.onOptionsItemSelected(item);
-	}
 		
 	private void initData()
 	{
@@ -87,8 +134,6 @@ public class DetailActivity extends AppCompatActivity {
 	
 	private void initComponent()
 	{
-		String notice = "Tidak ada deskripsi dalam bahasa indonesia";
-		
 		if (status.equalsIgnoreCase("FILM")) {
 			film = getIntent().getParcelableExtra(EXTRA_INTENT_FILM);
 			
@@ -100,7 +145,7 @@ public class DetailActivity extends AppCompatActivity {
 			txtTitle.setText(film.getFilm_title());
 			txtDate.setText(film.getFilm_date());
 			txtRating.setText(String.valueOf(film.getFilm_rating()));
-			txtDescription.setText(film.getFilm_description().length() == 0 ? notice : film.getFilm_description());
+			txtDescription.setText(film.getFilm_description());
 			
 		} else if (status.equalsIgnoreCase("TV")) {
 			tv = getIntent().getParcelableExtra(EXTRA_INTENT_TV);
@@ -112,7 +157,7 @@ public class DetailActivity extends AppCompatActivity {
 			txtTitle.setText(tv.getTv_title());
 			txtDate.setText(tv.getTv_date());
 			txtRating.setText(String.valueOf(tv.getTv_rating()));
-			txtDescription.setText(tv.getTv_description().length() == 0 ? notice : tv.getTv_description());
+			txtDescription.setText(tv.getTv_description());
 		}
 		
 	}

@@ -23,11 +23,20 @@
     <!-- Menu -->
     <string name="change_language">Ubah Bahasa</string>
     <string name="add_favorite_menu">Tambah Favorit</string>
-    <string name="delete_favorite_menu">Hapus Favorite</string>
+    <string name="delete_favorite_menu">Hapus Favorit</string>
+
+    <string name="success_delete_favorit_film">Favorit film berhasil di hapus</string>
+    <string name="success_delete_favorit_tv">Favorit tv berhasil di hapus</string>
+    <string name="error_message_add_favorite">Data Favorite sudah dimasukan</string>
+    <string name="success_message_add_favorite_film">Film berhasil ditambahkan ke daftar favorit</string>
+    <string name="success_message_add_favorite_tv">TV berhasil ditambahkan ke daftar favorit</string>
 
     <string name="detail_activity_title">Detail Activity</string>
+    <string name="detail_favorite_activity_title">Detail Favorite Activity</string>
     <string name="image_description">Gambar pada Deskripsi detail</string>
     <string name="film_image_description">Gambar Deskripsi film</string>
     <string name="tv_image_description">Gambar Deskripsi TV</string>
     <string name="favorite_title_menu">Favorit</string>
+    <string name="favorite_tv_fragment_text">Favorite TV Fragment</string>
+    <string name="favorite_film_fragment_text">Favorite FILM Fragment</string>
 </resources>

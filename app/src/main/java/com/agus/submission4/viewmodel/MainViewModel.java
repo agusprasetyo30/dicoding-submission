@@ -47,7 +47,7 @@ public class MainViewModel extends AndroidViewModel
 		super(application);
 		
 		this.favFilmRepository = new FavFilmRepository(application);
-//		this.favTVRepository = new FavTVRepository(application);
+		this.favTVRepository = new FavTVRepository(application);
 	}
 	
 	// Mengisi data FILM API ke dalam Array List
@@ -160,11 +160,17 @@ public class MainViewModel extends AndroidViewModel
 		return listTV;
 	}
 
-	// mengambil data DB dari repository
+	// mengambil data DB dari repository Film
 	public LiveData<List<Film>> getFavFilmList()
 	{
 		// Memanggil repository
 		return favFilmRepository.getFavFilmList();
+	}
+	
+	// mengambil data DB dari repository TV
+	public LiveData<List<TV>> getFavTVList()
+	{
+		return favTVRepository.getFavTVList();
 	}
 	
 	// menyimpan data favorit film
@@ -177,5 +183,17 @@ public class MainViewModel extends AndroidViewModel
 	public void deleteFavFilm(Film film)
 	{
 		this.favFilmRepository.deleteFavFilm(film);
+	}
+	
+	// menyimpan data favorit TV
+	public void saveFavTV(TV tv)
+	{
+		this.favTVRepository.saveFavTV(tv);
+	}
+
+	// menghapus data favorit film
+	public void deleteFavTV(TV tv)
+	{
+		this.favTVRepository.deleteFavTV(tv);
 	}
 }

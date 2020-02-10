@@ -1,17 +1,17 @@
 package com.agus.submission4.adapter;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.agus.submission4.DetailFavoriteActivity;
+import com.agus.submission4.DetailActivity;
 import com.agus.submission4.R;
 import com.agus.submission4.model.Film;
 import com.squareup.picasso.Picasso;
@@ -48,12 +48,15 @@ public class CardViewFavFilmAdapter extends RecyclerView.Adapter<CardViewFavFilm
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				DetailFavoriteActivity.status = "FILM";
+				DetailActivity.status = "FILM";
+				DetailActivity.dataType = "DB";
 				
-				Toast.makeText(view.getContext(), film.getFilm_title(), Toast.LENGTH_SHORT).show();
-//				Intent intent = new Intent(view.getContext(), DetailFavoriteActivity.class);
-//				intent.putExtra(DetailFavoriteActivity.EXTRA_INTENT_FILM, film);
-//				view.getContext().startActivity(intent);
+				Activity activity = (Activity)view.getContext();
+				
+				Intent intent = new Intent(view.getContext(), DetailActivity.class);
+				intent.putExtra(DetailActivity.EXTRA_INTENT_FILM, film);
+				view.getContext().startActivity(intent);
+				activity.finish();
 			}
 		});
 	}
@@ -83,7 +86,6 @@ public class CardViewFavFilmAdapter extends RecyclerView.Adapter<CardViewFavFilm
 		
 		// Mengisi data ke dalam item
 		public void bind(final Film film) {
-			String notice = "Tidak ada deskripsi dalam bahasa indonesia";
 			
 			Picasso.get()
 				.load(film.getFilm_image())
@@ -91,8 +93,7 @@ public class CardViewFavFilmAdapter extends RecyclerView.Adapter<CardViewFavFilm
 				.into(img_film);
 			
 			tvTitleFilm.setText(film.getFilm_title());
-			
-			tvDescription.setText(film.getFilm_description().length() == 0 ? notice : film.getFilm_description());
+			tvDescription.setText(film.getFilm_description());
 		}
 	}
 }

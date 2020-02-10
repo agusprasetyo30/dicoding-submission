@@ -49,6 +49,7 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 			@Override
 			public void onClick(View view) {
 				DetailActivity.status = "FILM";
+				DetailActivity.dataType = "API";
 				
 				Intent intent = new Intent(view.getContext(), DetailActivity.class);
 				intent.putExtra(DetailActivity.EXTRA_INTENT_FILM, film);
@@ -90,7 +91,6 @@ public class CardViewFilmAdapter extends RecyclerView.Adapter<CardViewFilmAdapte
 				.into(img_film);
 			
 			tvTitleFilm.setText(film.getFilm_title());
-			
 			tvDescription.setText(film.getFilm_description());
 		}
 		
