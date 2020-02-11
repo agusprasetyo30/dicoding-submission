@@ -78,6 +78,7 @@ public class DetailActivity extends AppCompatActivity {
 						this.mainViewModel.saveFavFilm(newFavFilm);
 						Toast.makeText(this, R.string.success_message_add_favorite_film, Toast.LENGTH_SHORT).show();
 						
+						
 						Log.d("CEK", "Save Sukses");
 						Log.d("CEK", "ID : " + newFavFilm.getFilm_id() + " | image Link : " + newFavFilm.getFilm_image() +
 							" | Title : " + newFavFilm.getFilm_title() + " | Date : " + newFavFilm.getFilm_date() + " | Rating : " + newFavFilm.getFilm_rating() +
@@ -95,10 +96,6 @@ public class DetailActivity extends AppCompatActivity {
 							" | Description : " + newFavTV.getTv_description());
 				}
 				
-				Intent i = new Intent(DetailActivity.this, MainActivity.class);
-				startActivity(i);
-				finish();
-				
 			break;
 				
 			case R.id.delete_favorite: // tombol hapus favorit
@@ -112,12 +109,13 @@ public class DetailActivity extends AppCompatActivity {
 					this.mainViewModel.deleteFavTV(deleteFavTV);
 					Toast.makeText(this, R.string.success_delete_favorit_tv, Toast.LENGTH_SHORT).show();
 				}
-				
-				Intent favActivityIntent = new Intent(DetailActivity.this, FavoriteActivity.class);
-				startActivity(favActivityIntent);
-				finish();
 			break;
 		}
+		
+			Intent favActivityIntent = new Intent(DetailActivity.this, FavoriteActivity.class);
+			startActivity(favActivityIntent);
+			finish();
+			
 			return super.onOptionsItemSelected(item);
 		}
 		
