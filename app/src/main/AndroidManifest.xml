@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.agus.submission3">
+    package="com.agus.submission4">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,14 +15,14 @@
         android:allowBackup="true"
         android:fullBackupContent="true">
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.agus.submission4.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name="com.agus.submission4.DetailActivity" android:parentActivityName="com.agus.submission4.MainActivity"/>
     </application>
 
 </manifest>

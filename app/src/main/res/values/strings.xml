@@ -22,5 +22,6 @@
 
     <!-- Menu -->
     <string name="change_language">Ubah Bahasa</string>
+    <string name="image_description">Gambar pada Deskripsi detail</string>
 
 </resources>

@@ -1,10 +1,9 @@
-package com.agus.submission3.Fragment;
+package com.agus.submission4.fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,10 +13,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.agus.submission3.R;
-import com.agus.submission3.Adapter.CardViewTVAdapter;
-import com.agus.submission3.Model.TV;
-import com.agus.submission3.ViewModel.MainViewModel;
+import com.agus.submission4.R;
+import com.agus.submission4.adapter.CardViewTVAdapter;
+import com.agus.submission4.model.TV;
+import com.agus.submission4.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
 import java.util.Locale;

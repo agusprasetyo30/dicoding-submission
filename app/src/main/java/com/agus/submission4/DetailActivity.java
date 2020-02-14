@@ -1,4 +1,4 @@
-package com.agus.submission3;
+package com.agus.submission4;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.agus.submission3.Model.Film;
-import com.agus.submission3.Model.TV;
+import com.agus.submission4.model.Film;
+import com.agus.submission4.model.TV;
 import com.squareup.picasso.Picasso;
 
 

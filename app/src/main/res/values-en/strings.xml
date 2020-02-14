@@ -23,4 +23,5 @@
 
     <!-- Menu -->
     <string name="change_language">Change Language</string>
+    <string name="image_description">Image For Details Description</string>
 </resources>

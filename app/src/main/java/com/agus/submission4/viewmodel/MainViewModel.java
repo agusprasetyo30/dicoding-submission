@@ -1,4 +1,4 @@
-package com.agus.submission3.ViewModel;
+package com.agus.submission4.viewmodel;
 
 import android.util.Log;
 import android.view.View;
@@ -8,9 +8,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.agus.submission3.Fragment.FilmFragment;
-import com.agus.submission3.Model.Film;
-import com.agus.submission3.Model.TV;
+import com.agus.submission4.model.Film;
+import com.agus.submission4.model.TV;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 

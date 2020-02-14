@@ -1,4 +1,4 @@
-package com.agus.submission3.Adapter;
+package com.agus.submission4.adapter;
 
 import android.content.Context;
 
@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.agus.submission3.R;
-import com.agus.submission3.Fragment.FilmFragment;
-import com.agus.submission3.Fragment.TVFragment;
+import com.agus.submission4.R;
+import com.agus.submission4.fragment.FilmFragment;
+import com.agus.submission4.fragment.TVFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	private final Context mContext;

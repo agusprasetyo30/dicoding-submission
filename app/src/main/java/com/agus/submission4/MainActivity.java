@@ -1,4 +1,4 @@
-package com.agus.submission3;
+package com.agus.submission4;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.agus.submission3.Adapter.SectionsPagerAdapter;
+import com.agus.submission4.adapter.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {

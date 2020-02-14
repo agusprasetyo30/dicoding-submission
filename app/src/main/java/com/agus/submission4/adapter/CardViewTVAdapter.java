@@ -1,4 +1,4 @@
-package com.agus.submission3.Adapter;
+package com.agus.submission4.adapter;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.agus.submission3.DetailActivity;
-import com.agus.submission3.R;
-import com.agus.submission3.Model.TV;
+import com.agus.submission4.DetailActivity;
+import com.agus.submission4.R;
+import com.agus.submission4.model.TV;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
